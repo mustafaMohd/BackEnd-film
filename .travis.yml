@@ -14,10 +14,7 @@ env:
     - JWT_SECRET=thisisasamplesecret
     - JWT_ACCESS_EXPIRATION_MINUTES=30
     - JWT_REFRESH_EXPIRATION_DAYS=30
-    - TEST_SUITE=units
-    - TEST_SUITE=integration
-script: "bundle exec rake test:$TEST_SUITE"
+script:
   - yarn lint
-  - yarn test
-  
+  - yarn test --runInBand
 after_success: yarn coverage:coveralls
