@@ -47,7 +47,7 @@ const updateCommentById = async (commentId, updateBody) => {
  * @param {ObjectId} commentId
  * @returns {Promise<Comment>}
  */
-const deleteCommentIdById = async (commentId) => {
+const deleteCommentById = async (commentId) => {
   const comment = await getCommentById(commentId);
   if (!comment) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Comment not found');
@@ -60,5 +60,5 @@ module.exports = {
   createComment,
   getCommentById,
   updateCommentById,
-  deleteCommentIdById,
+  deleteCommentById,
 };

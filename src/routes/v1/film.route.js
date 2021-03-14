@@ -12,7 +12,7 @@ router
 
 router
   .route('/:filmId')
-  .get(validate(filmValidation.getFilms), filmController.getFilm)
+  .get(validate(filmValidation.getFilm), filmController.getFilm)
   .patch(validate(filmValidation.updateFilm), filmController.updateFilm)
   .delete(validate(filmValidation.deleteFilm), filmController.deleteFilm);
 

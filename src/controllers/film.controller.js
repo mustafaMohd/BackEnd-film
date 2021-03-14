@@ -17,7 +17,7 @@ const getFilms = catchAsync(async (req, res) => {
 });
 
 const getFilm = catchAsync(async (req, res) => {
-  const film = await filmService.getFilmById(req.params.userId);
+  const film = await filmService.getFilmById(req.params.filmId);
   if (!film) {
     throw new ApiError(httpStatus.NOT_FOUND, 'film not found');
   }
@@ -25,12 +25,12 @@ const getFilm = catchAsync(async (req, res) => {
 });
 
 const updateFilm = catchAsync(async (req, res) => {
-  const user = await filmService.updateFilmById(req.params.userId, req.body);
+  const user = await filmService.updateFilmById(req.params.filmId, req.body);
   res.send(user);
 });
 
 const deleteFilm = catchAsync(async (req, res) => {
-  await filmService.deleteFilmById(req.params.userId);
+  await filmService.deleteFilmById(req.params.filmId);
   res.status(httpStatus.NO_CONTENT).send();
 });
 

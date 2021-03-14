@@ -56,7 +56,7 @@ const updateFilmById = async (filmId, updateBody) => {
  * @param {ObjectId} userId
  * @returns {Promise<Film>}
  */
-const deleteFilmIdById = async (filmId) => {
+const deleteFilmById = async (filmId) => {
   const film = await getFilmById(filmId);
   if (!film) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Film not found');
@@ -70,5 +70,5 @@ module.exports = {
   queryFilms,
   getFilmById,
   updateFilmById,
-  deleteFilmIdById,
+  deleteFilmById,
 };
