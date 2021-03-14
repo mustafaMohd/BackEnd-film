@@ -1,16 +1,5 @@
 const films = [
   {
-    name: 'Parasite',
-    description:
-      'Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan',
-    ticketPrice: 400,
-    rating: 4,
-    releaseDate: 'Mon Jan 02 2012',
-    genre: ['Comedy', 'Drama', 'Thriller'],
-    photo: 'http://www.ruthlessreviews.com/wp-content/uploads/2019/10/parasite-meta.jpg',
-    country: 'South Korea',
-  },
-  {
     name: 'Life Is Beautiful',
     description:
       'When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son from the dangers around their camp.',
@@ -29,7 +18,7 @@ const films = [
     genre: ['Comedy', 'Drama', 'Thriller'],
     photo: 'https://www.imdb.com/title/tt6751668/mediaviewer/rm3194916865/',
     country: 'USA',
-  },
+  }
 ];
 
 module.exports = {

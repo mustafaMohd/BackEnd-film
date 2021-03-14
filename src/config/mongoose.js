@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const logger = require('./logger');
 const config = require('./config');
 
-const mongoUri = config.mongoose.url;
-const mongoOptions = config.mongoose.options;
+const mongoUri = config.mongo.url;
+const mongoOptions = config.mongo.options;
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(mongoUri, mongoOptions);
