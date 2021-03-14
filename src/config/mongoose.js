@@ -17,8 +17,4 @@ const connectDB = async () => {
 
 module.exports = {
   connectDB,
-  User: require('../models/user.model'),
-  Token: require('../models/token.model'),
-  Film: require('../models/token.model'),
-  Comment: require('../models/comment.model'),
 };

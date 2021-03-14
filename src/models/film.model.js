@@ -1,11 +1,13 @@
 /* eslint-disable prettier/prettier */
 const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
 const autopopulate = require("mongoose-autopopulate");
 const slugify = require('slugify')
 const { toJSON, paginate } = require('./plugins');
 
 
-const filmSchema = mongoose.Schema(
+const filmSchema = new Schema(
   {
     name: { type: String, required: true },
     slug: { type: String },
@@ -16,6 +18,7 @@ const filmSchema = mongoose.Schema(
     genre:[],
     country: { type: String },
     photo: { type: String },
+    // comments:[{type: Schema.Types.ObjectId, ref: 'Comment',autopopulate: true}]
   },
   
   {
