@@ -18,3 +18,4 @@ script:
   - yarn lint
   - yarn test
 after_success: yarn coverage:coveralls
+install: travis_wait mvn install

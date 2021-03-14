@@ -4,7 +4,7 @@ const catchAsync = require('../utils/catchAsync');
 const { commentService } = require('../services');
 
 const createComment = catchAsync(async (req, res) => {
-  const comment = await commentService.createComment(req.body);
+  const comment = await commentService.createComment(req.user, req.body);
   res.status(httpStatus.CREATED).send(comment);
 });
 

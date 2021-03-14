@@ -7,8 +7,13 @@ const { Comment } = require('../models');
  * @param {Object} commentBody
  * @returns {Promise<Comment>}
  */
-const createComment = async (filmBody) => {
-  const comment = await Comment.create(filmBody);
+const createComment = async (user, commentBody) => {
+  const newComment = new Comment({
+    comment: commentBody.comment,
+    film: commentBody.film,
+    name: user.id,
+  });
+  const comment = await Comment.create(newComment);
   return comment;
 };
 
@@ -39,7 +44,7 @@ const updateCommentById = async (commentId, updateBody) => {
 
 /**
  * Delete comment by id
- * @param {ObjectId} userId
+ * @param {ObjectId} commentId
  * @returns {Promise<Comment>}
  */
 const deleteCommentIdById = async (commentId) => {
