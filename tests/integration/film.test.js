@@ -15,7 +15,7 @@ describe('Film routes', () => {
         name: 'fake Movie',
         description: 'faker.internet.dis.toLowerCase()',
         ticketPrice: 55,
-        releaseDate: '2012-11-04T14:51:06.157Z',
+        releaseDate: Date.now(),
         rating: 4,
         genre: ['Action', 'Drama'],
         country: 'USA',
@@ -28,12 +28,12 @@ describe('Film routes', () => {
       expect(res.body).toEqual({
         id: expect.anything(),
         name: newFilm.name,
-        slug: expect.any(String),
+        slug: expect.anything(),
         description: newFilm.description,
         ticketPrice: newFilm.ticketPrice,
         rating: newFilm.rating,
         genre: newFilm.genre,
-        releaseDate: newFilm.releaseDate,
+        releaseDate: expect.any(String),
         country: newFilm.country,
         photo: newFilm.photo,
         comments: expect.any(Array),
@@ -41,22 +41,24 @@ describe('Film routes', () => {
 
       const dbFilm = await Film.findById(res.body.id);
       expect(dbFilm).toBeDefined();
-      expect(dbFilm).toMatchObject({
+      
+      expect(dbFilm.toJSON()).toMatchObject({
+        id: expect.anything(),
         name: newFilm.name,
         slug: expect.any(String),
         description: newFilm.description,
         ticketPrice: newFilm.ticketPrice,
         rating: newFilm.rating,
         genre: newFilm.genre,
-        releaseDate: newFilm.releaseDate,
+        releaseDate: expect.any(Date),
         country: newFilm.country,
         photo: newFilm.photo,
         
-        comments: expect.any(Array),
+        comments: [],
       });
     });
 
-    test('should return 400 error if password length is less than 8 characters', async () => {
+    test('should return 400 error if rating length is greater than 5', async () => {
       newFilm.rating = 6;
 
       await request(app).post('/v1/films').send(newFilm).expect(httpStatus.BAD_REQUEST);
@@ -272,6 +274,11 @@ describe('Film routes', () => {
   //   });
   // });
 
+
+
+
+
+  
   // describe('GET /v1/users/:userId', () => {
   //   test('should return 200 and the user object if data is ok', async () => {
   //     await insertUsers([userOne]);
