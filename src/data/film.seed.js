@@ -18,7 +18,7 @@ const films = [
     genre: ['Comedy', 'Drama', 'Thriller'],
     photo: 'https://www.imdb.com/title/tt6751668/mediaviewer/rm3194916865/',
     country: 'USA',
-  }
+  },
 ];
 
 module.exports = {
