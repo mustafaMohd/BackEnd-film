@@ -3,6 +3,7 @@ const authRoute = require('./auth.route');
 const userRoute = require('./user.route');
 
 const filmRoute = require('./film.route');
+const commentRoute = require('./comment.route');
 const docsRoute = require('./docs.route');
 const config = require('../../config/config');
 
@@ -20,6 +21,10 @@ const defaultRoutes = [
   {
     path: '/films',
     route: filmRoute,
+  },
+  {
+    path: '/comments',
+    route: commentRoute,
   },
 ];
 

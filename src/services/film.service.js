@@ -7,7 +7,7 @@ const { Film } = require('../models');
  * @param {Object} filmBody
  * @returns {Promise<Film>}
  */
-const createUser = async (filmBody) => {
+const createFilm = async (filmBody) => {
   const film = await Film.create(filmBody);
   return film;
 };
@@ -66,7 +66,7 @@ const deleteFilmIdById = async (filmId) => {
 };
 
 module.exports = {
-  createUser,
+  createFilm,
   queryFilms,
   getFilmById,
   updateFilmById,
