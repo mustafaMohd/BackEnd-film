@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const { toJSON, paginate } = require('./plugins');
 
-const commentSchema = mongoose.Schema(
+const commentSchema = new Schema(
   {
-    film: { type: Schema.Types.ObjectId, ref: 'Film', required: true },
-    name: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    film: { type: Schema.Types.ObjectId, ref: 'Film' },
+    name: { type: Schema.Types.ObjectId, ref: 'User' },
     comment: { type: String, maxlength: 200 },
   },
 

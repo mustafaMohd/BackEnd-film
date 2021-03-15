@@ -8,7 +8,8 @@ const connectDB = async () => {
   try {
     const conn = await mongoose.connect(mongoUri, mongoOptions);
 
-    logger.log(`MongoDB Connected: ${conn.connection.host}`);
+    // eslint-disable-next-line no-console
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     logger.error(`Error: ${error.message}`);
     process.exit(1);

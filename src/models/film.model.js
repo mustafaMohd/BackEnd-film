@@ -9,12 +9,12 @@ const { toJSON, paginate } = require('./plugins');
 
 const filmSchema = new Schema(
   {
-    name: { type: String, required: true },
+    name: { type: String},
     slug: { type: String },
     description: { type: String },
     ticketPrice: { type: Number},
     releaseDate: { type: Date },
-    rating: { type: Number, min: 1, max: 5, required: true },
+    rating: { type: Number, min: 1, max: 5 },
     genre:[],
     country: { type: String },
     photo: { type: String },

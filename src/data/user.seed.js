@@ -5,7 +5,7 @@ const salt = bcrypt.genSaltSync(8);
 const hashedPassword = bcrypt.hashSync(password, salt);
 const users = [
   {
-    fullname: 'Admin User',
+    name: 'Admin User',
     email: 'admin@example.com',
     password: hashedPassword,
     role: 'admin',
