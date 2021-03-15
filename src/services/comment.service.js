@@ -32,10 +32,13 @@ const getCommentById = async (id) => {
  * @param {Object} updateBody
  * @returns {Promise<Comment>}
  */
-const updateCommentById = async (commentId, updateBody) => {
+const updateCommentById = async (user, commentId, updateBody) => {
   const comment = await getCommentById(commentId);
   if (!comment) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Film not found');
+  }
+  if (comment.name.toString() !== user.id) {
+    throw new ApiError(httpStatus.FORBIDDEN, 'FORBIDDEN');
   }
   Object.assign(comment, updateBody);
   await comment.save();
@@ -47,10 +50,13 @@ const updateCommentById = async (commentId, updateBody) => {
  * @param {ObjectId} commentId
  * @returns {Promise<Comment>}
  */
-const deleteCommentById = async (commentId) => {
+const deleteCommentById = async (user, commentId) => {
   const comment = await getCommentById(commentId);
   if (!comment) {
     throw new ApiError(httpStatus.NOT_FOUND, 'Comment not found');
+  }
+  if (comment.name.toString() !== user.id) {
+    throw new ApiError(httpStatus.FORBIDDEN, 'FORBIDDEN');
   }
   await comment.remove();
   return comment;

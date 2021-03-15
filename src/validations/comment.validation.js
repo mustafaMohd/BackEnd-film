@@ -18,11 +18,9 @@ const updateComment = {
   params: Joi.object().keys({
     commentId: Joi.required().custom(objectId),
   }),
-  body: Joi.object()
-    .keys({
-      comment: Joi.string(),
-    })
-    .min(1),
+  body: Joi.object().keys({
+    comment: Joi.string().required(),
+  }),
 };
 
 const deleteComment = {

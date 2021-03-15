@@ -16,8 +16,7 @@ const commentSchema = mongoose.Schema(
   }
 );
 
-// user can review the product once
-commentSchema.index({ film: 1, name: 1 }, { unique: true });
+
 // add plugin that converts mongoose to json
 commentSchema.plugin(toJSON);
 commentSchema.plugin(paginate);

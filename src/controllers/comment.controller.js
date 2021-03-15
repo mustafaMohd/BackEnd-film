@@ -18,12 +18,12 @@ const getComment = catchAsync(async (req, res) => {
 });
 
 const updateComment = catchAsync(async (req, res) => {
-  const comment = await commentService.updateCommentById(req.params.commentId, req.body);
+  const comment = await commentService.updateCommentById(req.user, req.params.commentId, req.body);
   res.send(comment);
 });
 
 const deleteComment = catchAsync(async (req, res) => {
-  await commentService.deleteCommentById(req.params.commentId);
+  await commentService.deleteCommentById(req.user, req.params.commentId);
   res.status(httpStatus.NO_CONTENT).send();
 });
 
