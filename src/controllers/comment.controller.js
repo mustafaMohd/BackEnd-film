@@ -8,7 +8,6 @@ const createComment = catchAsync(async (req, res) => {
   res.status(httpStatus.CREATED).send(comment);
 });
 
-
 const getComment = catchAsync(async (req, res) => {
   const comment = await commentService.getCommentById(req.params.commentId);
   if (!comment) {

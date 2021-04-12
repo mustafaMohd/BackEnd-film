@@ -25,7 +25,7 @@ const importData = async () => {
     const filmOneComments = comments.map((comment) => {
       return { ...comment, name: simpleUser._id, film: filmOne._id };
     });
-   
+
     const filmTwoComments = comments.map((comment) => {
       return { ...comment, name: adminUser._id, film: filmTwo._id };
     });

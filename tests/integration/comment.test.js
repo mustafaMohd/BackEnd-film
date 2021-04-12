@@ -93,7 +93,7 @@ describe('Comment routes', () => {
 
     test('should return 404 error if comment is not found', async () => {
       await insertUsers([userOne]);
-      
+
       await insertFilms([filmOne, filmTwo]);
       await insertComments([Comment1, Comment3, Comment4]);
 
@@ -122,7 +122,7 @@ describe('Comment routes', () => {
         .set('Authorization', `Bearer ${userOneAccessToken}`)
         .send(updatedComment)
         .expect(httpStatus.OK);
- 
+
       expect(res.body).toEqual({
         id: Comment1._id.toHexString(),
 

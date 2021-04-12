@@ -9,7 +9,7 @@ const connectDB = async () => {
     const conn = await mongoose.connect(mongoUri, mongoOptions);
 
     // eslint-disable-next-line no-console
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    logger.info(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     logger.error(`Error: ${error.message}`);
     process.exit(1);

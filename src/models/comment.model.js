@@ -16,7 +16,6 @@ const commentSchema = new Schema(
   }
 );
 
-
 // add plugin that converts mongoose to json
 commentSchema.plugin(toJSON);
 commentSchema.plugin(paginate);
