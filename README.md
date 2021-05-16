@@ -9,7 +9,7 @@ Clone the repo:
 ```bash
 git clone --depth 1 https://github.com/mustafaMohd/BackEnd-film.git
 cd BackEnd-film
-npx rimraf ./.git
+
 ```
 
 Install the dependencies:
