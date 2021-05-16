@@ -31,7 +31,7 @@ Clone the repo:
 
 ```bash
 git clone --depth 1 https://github.com/mustafaMohd/BackEnd-film.git
-cd node-express-boilerplate
+cd BackEnd-film
 npx rimraf ./.git
 ```
 
