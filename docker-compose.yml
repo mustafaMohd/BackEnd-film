@@ -5,7 +5,7 @@ services:
     build: .
     image: node-app
     environment:
-      - MONGODB_URL=mongodb://mongodb:27017/multi-store
+      - MONGODB_URL=mongodb://mongodb:27017/films
     ports:
       - '3000:3000'
     depends_on:
