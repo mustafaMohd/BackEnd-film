@@ -1,12 +1,9 @@
-<<<<<<< Updated upstream
-# RESTful API Node Server 
-=======
-# RESTful API Node Server
->>>>>>> Stashed changes
+# RESTful API Node Server Boilerplate
 
-[![Build Status]()]()
-[![Coverage Status](https://coveralls.io/repos/github/hagopj13/node-express-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/hagopj13/node-express-boilerplate?branch=master)
-A RESTful APIs using Node.js, Express, and Mongoose.
+[![Build Status](https://travis-ci.com/github/mustafaMohd/BackEnd-film.svg?branch=master)](https://travis-ci.com/github/mustafaMohd/BackEnd-film)
+
+
+A boilerplate/starter project for quickly building RESTful APIs using Node.js, Express, and Mongoose.
 
 By running a single command, you will get a production-ready Node.js app installed and fully configured on your machine. The app comes with many built-in features, such as authentication using JWT, request validation, unit and integration tests, continuous integration, docker support, API documentation, pagination, etc. For more details, check the features list below.
 
@@ -41,11 +38,15 @@ Install the dependencies:
 ```bash
 yarn install
 ```
-
-Set the environment variables:
+seeding:
 
 ```bash
-cp .env.example .env
+# seed database
+npm run data:import
+
+# removing seed data from database
+npm run data:destroy
+
 
 # open .env and modify the environment variables (if needed)
 ```
@@ -156,7 +157,7 @@ The environment variables can be found and modified in the `.env` file. They com
 PORT=3000
 
 # URL of the Mongo DB
-MONGODB_URL=mongodb://127.0.0.1:27017/films
+MONGODB_URL=mongodb://127.0.0.1:27017/node-boilerplate
 
 # JWT
 # JWT secret key
@@ -432,7 +433,9 @@ Contributions are more than welcome! Please check out the [contributing guide](C
 
 ## Inspirations
 
-- [node-express-boilerplate](https://github.com/hagopj13/node-express-boilerplate)
+- [danielfsousa/express-rest-es2017-boilerplate](https://github.com/danielfsousa/express-rest-es2017-boilerplate)
+- [madhums/node-express-mongoose](https://github.com/madhums/node-express-mongoose)
+- [kunalkapadia/express-mongoose-es6-rest-api](https://github.com/kunalkapadia/express-mongoose-es6-rest-api)
 
 ## License
 
